@@ -1,0 +1,23 @@
+version: "3"
+services:
+  exercise01:
+    build: ./exercise01
+    ports:
+      - "8080:8080"
+
+  exercise02:
+    build: ./exercise02
+    # command: ["npm", "run", "build"]
+    volumes:
+      - ./output/dist:/usr/share/nginx/html
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./exercise02/dist:/usr/share/nginx/html
+    depends_on:
+      - exercise01
+      - exercise02

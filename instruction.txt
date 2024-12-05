@@ -1,0 +1,12 @@
+Home assigment ini akan mensimulasi aplikasi yang terdiri dari 2 komponen:
+ - Exercise01 adalah back end.
+ - Exercise02 adalah front end.
+
+1. Coba buat file dockerfile untuk build dan run program dari exercise01
+
+2. Coba buat file dockerfile untuk build program dari exercise02 dan menyimpan output dari build di komputer.
+
+3. Coba buat file nginx configuration untuk bisa menjalankan kedua applikasi diatas. Dengan aturan sebagai berikut:
+ - Request "/api" akan diarahkan ke server exercise01
+ - Diluar itu akan diarahkan ke file hasil build dari exercise02.
+
